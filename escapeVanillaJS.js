@@ -19,19 +19,19 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("room2Result").textContent = `The code to unlock the door is: ${Array.from(commonConcepts).join(', ')}`;
     });
 
-    // 🪲 Bug: Asynchronous function ?
-    document.getElementById("solveRoom3").addEventListener("click", () => {
-        fetch('directions.json') 
-            .then(response => response.json())
-            .then(directions => {
-                navigateLabyrinth(directions)
-                    .then(message => {
-                        // 🪲 Bug: Incorrect method
-                        document.getElementById("room3Result").innerHTML = message;
-                    });
+    // Asynchronous function 
+    document.getElementById("solveRoom3").addEventListener("click", async () => {
+       try{
+        const response = await fetch('directions.json');
+        const directions = await response.json();
+        const message = await navigateLabyrinth(directions);
+        document.getElementById("room3Result").innerHTML = message;
+       }catch(error){
+        // Handling any potential errors 
+        console.error(error)
+       }
             });
     });
-});
 
 function findMostRecentBook(books) {
     // 🪲 Bug: Logic error
