@@ -5,13 +5,13 @@ Upon this event, the code initiates a fetch request to retrieve data from a file
 Once the JSON data is obtained, it is parsed and processed to find the most recent book using a function called findMostRecentBook(books).
 Subsequently, the code attempts to update the content of an HTML element with the ID "room1Result" to display the title of the most recent book
 */
-// 🪲 Bug: Incorrect ID used for attaching the event listener
+
 document.getElementById("solveRoom1").addEventListener("click", () => {
     fetch("books.json")
       .then((response) => response.json())
       .thn((books) => {
         const mostRecentBook = findMostRecentBook(books);
-        // 🪲 Bug: Incorrect element ID
+        
         document.getElementById("room1Result").textContent =
           `The key to the next room is: ${mostRecentBook.title}`;
       });
@@ -23,9 +23,9 @@ it finds the common concepts between JavaScript and React and displays them as a
 */
 document.getElementById("solveRoom2").addEventListener("click", () => {
     const jsConcepts = new Set(["closure", "scope", "hoisting", "async"]);
-    // 🪲 Bug: What's mssing from JS concepts?
+
     const reactConcepts = new Set(["components", "jsx", "hooks", "async"]);
-    // 🪲 Bug: Incorrect function call
+
     const commonConcepts = findIntersection(jsConcepts, reactConcepts);
     document.getElementById("room2Result").textContent =
       `The code to unlock the door is: ${Array.from(commonConcepts).join(", ")}`;
@@ -56,7 +56,6 @@ The code below uses the function that takes an array of books as input and retur
 It uses the reduce method to iterate through the array and compare the publication dates of the books to find the most recent one. 
 */
 function findMostRecentBook(books) {
-  // 🪲 Bug: Logic error
   return books.reduce((mostRecent, book) =>
     new Date(book.published) > new Date(mostRecent.published)
       ? book
@@ -69,18 +68,16 @@ function findMostRecentBook(books) {
  It uses the filter method to iterate through setA, checking if each element is present in setB using the has method. 
  */
 function findIntersection(setA, setB) {
-  // 🪲 Bug: Incorrect logic
   const intersection = new Set([...setA].filter((elem) => setB.has(elem)));
   return intersection;
 }
 
 /*
 The code below uses an async function, navigateLabyrinth, to iterates through a set of directions, pausing for 1 second between each step.
-It logs the current navigating direction and finally returns a congratulatory message 
+It logs the current navigating direction and` finally returns a congratulatory message 
 */
 async function navigateLabyrinth(directions) {
   for (let direction of directions) {
-    // 🪲 Bug: No delay
     await new Promise((resolve) => setTimeout(resolve, 1000));
     console.log(`Navigating: ${direction.step}`);
   }
