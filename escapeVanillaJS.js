@@ -46,6 +46,7 @@ asynchronous operations, ensuring that the code doesn't break in case of failure
       const message = await navigateLabyrinth(directions);
       document.getElementById("room3Result").innerHTML = message;
     } catch (error) {
+      document.getElementById("room3Result").textContent = `No directions found`;
       // Handling any potential errors
       console.log(`Error: No directions found`);
     }
