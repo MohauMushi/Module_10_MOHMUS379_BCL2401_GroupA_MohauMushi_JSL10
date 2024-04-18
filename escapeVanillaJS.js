@@ -47,7 +47,7 @@ asynchronous operations, ensuring that the code doesn't break in case of failure
       document.getElementById("room3Result").innerHTML = message;
     } catch (error) {
       // Handling any potential errors
-      console.error(error);
+      console.log(`Error: No directions found`);
     }
   });
 });
