@@ -9,7 +9,7 @@ Subsequently, the code attempts to update the content of an HTML element with th
   document.getElementById("solveRoom1").addEventListener("click", () => {
     fetch("books.json")
       .then((response) => response.json())
-      .thn((books) => {
+      .then((books) => {
         const mostRecentBook = findMostRecentBook(books);
 
         document.getElementById("room1Result").textContent =
