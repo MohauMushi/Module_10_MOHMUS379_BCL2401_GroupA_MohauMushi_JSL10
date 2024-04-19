@@ -40,6 +40,10 @@ asynchronous operations, ensuring that the code doesn't break in case of failure
 */
   // Asynchronous function
   document.getElementById("solveRoom3").addEventListener("click", async () => {
+
+    const room3Result = document.getElementById("room3Result");
+    
+
     try {
       const response = await fetch("directions.json");
       const directions = await response.json();
