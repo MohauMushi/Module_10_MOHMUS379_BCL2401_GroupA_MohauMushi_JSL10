@@ -18,6 +18,9 @@ The Escape Vanilla JS challenge is a captivating and interactive web-based proje
 7. **Fix the `findIntersection` function to correctly determine the intersection of two sets.**
 8. **Add the `await` keyword before `new Promise` in `navigateLabyrinth` to ensure the simulation of asynchronous operations works as intended.**
 
+# Added Improvements
+I've added a loading spinner for the Asynchronous function of displaying the directions, so when the button is click the loading spinner will appear and then load until the directions in navigateLabyrinth loading, then the loading spinner will disappear and the directions of Ladyrinth will appear.
+
 # 📚 What I learned
 
 I have learned to unravel complex coding issues, identify errors, and implement effective debugging strategies to overcome obstacles. Moreover, the concept of abstraction has been exemplified in the way the challenges are structured, encouraging me to distill intricate programming problems into manageable and comprehensible components.
