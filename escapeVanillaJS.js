@@ -67,7 +67,10 @@ asynchronous operations, ensuring that the code doesn't break in case of failure
       }
     `;
     document.head.appendChild(style);
-
+  
+    room3Result.innerHTML = "";
+    room3Result.appendChild(loadingSpinner);
+    
     try {
       const response = await fetch("directions.json");
       const directions = await response.json();
