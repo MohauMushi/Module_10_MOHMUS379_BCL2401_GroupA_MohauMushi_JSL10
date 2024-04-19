@@ -58,6 +58,15 @@ asynchronous operations, ensuring that the code doesn't break in case of failure
       height: 2rem;
       animation: loading-spinner-animation 2s linear infinite;
     `;
+  
+    const style = document.createElement("style");
+    style.textContent = `
+      @keyframes loading-spinner-animation {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+    `;
+    
 
     try {
       const response = await fetch("directions.json");
