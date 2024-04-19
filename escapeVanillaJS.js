@@ -66,7 +66,7 @@ asynchronous operations, ensuring that the code doesn't break in case of failure
         100% { transform: rotate(360deg); }
       }
     `;
-    
+    document.head.appendChild(style);
 
     try {
       const response = await fetch("directions.json");
