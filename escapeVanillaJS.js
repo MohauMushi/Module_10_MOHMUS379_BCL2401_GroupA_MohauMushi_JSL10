@@ -42,6 +42,7 @@ asynchronous operations, ensuring that the code doesn't break in case of failure
   document.getElementById("solveRoom3").addEventListener("click", async () => {
 
     const room3Result = document.getElementById("room3Result");
+    const loadingSpinner = document.createElement("div");
     
 
     try {
