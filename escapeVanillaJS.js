@@ -44,7 +44,20 @@ asynchronous operations, ensuring that the code doesn't break in case of failure
     const room3Result = document.getElementById("room3Result");
     const loadingSpinner = document.createElement("div");
     loadingSpinner.classList.add("loading-spinner");
-    
+    loadingSpinner.style.cssText = `
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: auto;
+      min-height: 25px;
+      border-width: 4px;
+      border-style: solid;
+      border-color: #f3f3f3 #3498db #f3f3f3 #f3f3f3;
+      border-radius: 50%;
+      width: 2rem;
+      height: 2rem;
+      animation: loading-spinner-animation 2s linear infinite;
+    `;
 
     try {
       const response = await fetch("directions.json");
