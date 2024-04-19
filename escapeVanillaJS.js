@@ -59,14 +59,6 @@ asynchronous operations, ensuring that the code doesn't break in case of failure
       animation: loading-spinner-animation 2s linear infinite;
     `;
   
-    const style = document.createElement("style");
-    style.textContent = `
-      @keyframes loading-spinner-animation {
-        0% { transform: rotate(0deg); }
-        100% { transform: rotate(360deg); }
-      }
-    `;
-    document.head.appendChild(style);
   
     room3Result.innerHTML = "";
     room3Result.appendChild(loadingSpinner);
@@ -115,3 +107,12 @@ async function navigateLabyrinth(directions) {
   }
   return "Congratulations! You've mastered the essentials of Vanilla JavaScript. Welcome to the world of React, where you'll build powerful and dynamic web applications. Let's dive in!";
 }
+
+const style = document.createElement("style");
+    style.textContent = `
+      @keyframes loading-spinner-animation {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+    `;
+    document.head.appendChild(style);
