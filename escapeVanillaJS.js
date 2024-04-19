@@ -43,6 +43,7 @@ asynchronous operations, ensuring that the code doesn't break in case of failure
 
     const room3Result = document.getElementById("room3Result");
     const loadingSpinner = document.createElement("div");
+    loadingSpinner.classList.add("loading-spinner");
     
 
     try {
